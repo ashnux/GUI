@@ -108,3 +108,9 @@ class Player {
         this.money += money;
     }
 }
+
+class Item {
+    private String name;
+    private String description;
+    
+}
