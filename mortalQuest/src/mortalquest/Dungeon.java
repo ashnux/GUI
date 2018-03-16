@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Student
  */
 public class Dungeon implements java.io.Serializable{
-    private Location charCurrent;
+    private Location charLocation;
     private List<Location> places;
     
     public Dungeon(){
@@ -61,11 +61,11 @@ public class Dungeon implements java.io.Serializable{
         places.add(shop);
         places.add(boss);
         
-        charCurrent = places.get(0);
+        charLocation = places.get(0);
     }
     
     public void charMove(){
-        System.out.println(charCurrent.getLinks());
+        System.out.println(charLocation.getLinks());
         Scanner scanner = new Scanner(System.in);
         String input;
         direction movement = direction.NONE;
@@ -88,11 +88,11 @@ public class Dungeon implements java.io.Serializable{
                     break;
             }
         }
-        charCurrent = charCurrent.move(movement);
+        charLocation = charLocation.move(movement);
     }
     
     public Consequence getConsequence(){
-        return charCurrent.getConsequence();
+        return charLocation.getConsequence();
     }
 
     void boss() {

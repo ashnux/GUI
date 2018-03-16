@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mortalquest;
 
-class Player {
+import java.util.Random;
+
+class Character {
 
     private String name;
     private int health = 100;
     private int strength;
     private int agility;
     private int defence;
-    private int money = 100;
+    private int money = 0;
     private final int MAXINVENTORY = 20;
     private final Item[] inventory = new Item[MAXINVENTORY];//create inventory class examples for use include npc, max weight, size etc
 
+    public Character(){
+        Random rnd = new Random();
+        this.setStrength(rnd.nextInt(6) + rnd.nextInt(6) + rnd.nextInt(6) + 3);
+        this.setAgility(rnd.nextInt(6) + rnd.nextInt(6) + rnd.nextInt(6) + 3);
+        this.setDefence(rnd.nextInt(6) + rnd.nextInt(6) + rnd.nextInt(6) + 3);
+    }
+    
     public String getName() {
         return name;
     }
@@ -24,7 +28,7 @@ class Player {
         if (this.name == null) {
             this.name = name;
         } else {
-            System.out.println("Player already has name: " + this.name);
+            System.out.println("Character already has name: " + this.name);
         }
     }
 

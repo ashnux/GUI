@@ -19,8 +19,11 @@ import java.io.ObjectOutputStream;
 public class Game {
 
     public void start() {
-        Player player = new Player();
+        Character player = new Character();
+        Character boss = new Character();
         player.setName("chris");
+        player.addMoney(100);
+        boss.setName("BOSS");
         Dungeon dungeon = new Dungeon();
         boolean playing = true;
         Consequence charCurrent;

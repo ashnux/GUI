@@ -31,6 +31,7 @@ public class Location implements Serializable{
     public void setLink(direction compass, Location place){
         dungeon.put(compass, place);
     }
+    
     public String getLinks(){
         String directions = "";
         if(dungeon.get(direction.EAST)!=null)
